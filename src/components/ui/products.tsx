@@ -4,6 +4,7 @@ import type { Product } from "@/types/productType";
 import ButtonBuy from "./buttonBuy";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { memo } from "react";
 
 interface ProductsProps {
   products: Product[];
@@ -52,4 +53,4 @@ function Products({ products }: ProductsProps) {
   );
 }
 
-export default Products;
+export default memo(Products);
