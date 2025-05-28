@@ -3,6 +3,7 @@
 import type { Product } from "@/types/productType";
 import ButtonBuy from "./buttonBuy";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 interface ProductsProps {
   products: Product[];
@@ -13,9 +14,13 @@ function Products({ products }: ProductsProps) {
     <div className="max-w-6xl mx-auto px-4 py-6">
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((item) => (
-          <li
+          <motion.li
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             key={item.id}
-            className="group bg-white dark:bg-[#1C1C1C] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-200 dark:border-gray-700"
+            className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
           >
             <div className="relative h-48 w-full">
               <Image
@@ -26,17 +31,11 @@ function Products({ products }: ProductsProps) {
               />
             </div>
 
-            <div className="p-4 flex flex-col justify-between h-[230px]">
+            <div className="p-4 flex flex-col justify-between h-[200px]">
               <div className="space-y-2">
-                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  {item.title}
-                </h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  {item.brand}
-                </p>
-                <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-3">
-                  {item.description}
-                </p>
+                <h2 className="text-lg font-semibold">{item.title}</h2>
+                <p className="text-sm">{item.brand}</p>
+                <p className="text-sm line-clamp-3">{item.description}</p>
               </div>
 
               <div className="mt-4 flex items-center justify-between">
@@ -46,7 +45,7 @@ function Products({ products }: ProductsProps) {
                 <ButtonBuy product={item} />
               </div>
             </div>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>
