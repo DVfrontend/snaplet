@@ -1,0 +1,22 @@
+$size125: 0.125rem;
+$color: #121212;
+$size25: 0.25rem;
+
+.button {
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  background-color: rgb(200, 10, 20);
+  color: white;
+  padding: 0.5rem 0.5rem;
+  border-radius: $size25;
+  border: solid $size125 $color;
+  box-shadow: $size25 $size25 $color;
+  transition:
+    transform 50ms,
+    box-shadow 50ms;
+}
+
+.button:active {
+  transform: translate($size125, $size125);
+  box-shadow: $size125 $size125 $color;
+}
