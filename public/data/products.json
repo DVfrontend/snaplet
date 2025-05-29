@@ -23,7 +23,7 @@
     "brand": "De'Longhi",
     "rating": 4.7,
     "reviewsCount": 128,
-    "image": "/images/products/coffee_machine.jpg"
+    "image": "/images/products/house-hold/coffee_machine.jpg"
   },
   {
     "id": 3,
@@ -36,7 +36,7 @@
     "brand": "IKEA",
     "rating": 4.5,
     "reviewsCount": 87,
-    "image": "/images/products/sofa.jpg"
+    "image": "/images/products/for-home/sofa.jpg"
   },
   {
     "id": 4,
@@ -101,7 +101,7 @@
     "brand": "Tefal",
     "rating": 4.4,
     "reviewsCount": 76,
-    "image": "/images/products/pots.jpg"
+    "image": "/images/products/for-home/pots.jpg"
   },
   {
     "id": 9,
@@ -127,7 +127,7 @@
     "brand": "Home Decor",
     "rating": 4.2,
     "reviewsCount": 43,
-    "image": "/images/products/mirror.jpg"
+    "image": "/images/products/for-home/mirror.jpg"
   },
   {
     "id": 11,
@@ -179,7 +179,7 @@
     "brand": "IKEA",
     "rating": 4.4,
     "reviewsCount": 67,
-    "image": "/images/products/bookshelf.jpg"
+    "image": "/images/products/for-home/bookshelf.jpg"
   },
   {
     "id": 15,
@@ -218,7 +218,7 @@
     "brand": "Home Comfort",
     "rating": 4.5,
     "reviewsCount": 124,
-    "image": "/images/products/blanket.jpg"
+    "image": "/images/products/for-home/blanket.jpg"
   },
   {
     "id": 18,
@@ -257,7 +257,7 @@
     "brand": "Christy",
     "rating": 4.4,
     "reviewsCount": 87,
-    "image": "/images/products/towels.jpg"
+    "image": "/images/products/for-home/towels.jpg"
   },
   {
     "id": 21,
@@ -283,7 +283,7 @@
     "brand": "Steelcase",
     "rating": 4.6,
     "reviewsCount": 156,
-    "image": "/images/products/chair.jpg"
+    "image": "/images/products/for-home/chair.jpg"
   },
   {
     "id": 23,
@@ -335,7 +335,7 @@
     "brand": "IKEA",
     "rating": 4.3,
     "reviewsCount": 98,
-    "image": "/images/products/lamp.jpg"
+    "image": "/images/products/for-home/lamp.jpg"
   },
   {
     "id": 27,
@@ -387,7 +387,7 @@
     "brand": "Corelle",
     "rating": 4.5,
     "reviewsCount": 112,
-    "image": "/images/products/dinnerware.jpg"
+    "image": "/images/products/for-home/dinnerware.jpg"
   },
   {
     "id": 31,
@@ -413,7 +413,7 @@
     "brand": "Tempur",
     "rating": 4.7,
     "reviewsCount": 178,
-    "image": "/images/products/pillow.jpg"
+    "image": "/images/products/for-home/pillow.jpg"
   },
   {
     "id": 33,
@@ -439,7 +439,7 @@
     "brand": "Joseph Joseph",
     "rating": 4.5,
     "reviewsCount": 134,
-    "image": "/images/products/scales.jpg"
+    "image": "/images/products/for-home/scales.jpg"
   },
   {
     "id": 35,
@@ -452,7 +452,7 @@
     "brand": "Simplehuman",
     "rating": 4.2,
     "reviewsCount": 87,
-    "image": "/images/products/toothbrushholder.jpg"
+    "image": "/images/products/for-home/toothbrushholder.jpg"
   },
   {
     "id": 36,
@@ -504,7 +504,7 @@
     "brand": "Artistic Home",
     "rating": 4.3,
     "reviewsCount": 67,
-    "image": "/images/products/painting.jpg"
+    "image": "/images/products/for-home/painting.jpg"
   },
   {
     "id": 40,
@@ -595,7 +595,7 @@
     "brand": "Lodge",
     "rating": 4.8,
     "reviewsCount": 267,
-    "image": "/images/products/pan.jpg"
+    "image": "/images/products/for-home/pan.jpg"
   },
   {
     "id": 47,
@@ -660,7 +660,7 @@
     "brand": "Lechuza",
     "rating": 4.4,
     "reviewsCount": 87,
-    "image": "/images/products/flowerpot.jpg"
+    "image": "/images/products/for-home/flowerpot.jpg"
   },
   {
     "id": 52,
@@ -686,7 +686,7 @@
     "brand": "IKEA",
     "rating": 4.5,
     "reviewsCount": 112,
-    "image": "/images/products/carpet.jpg"
+    "image": "/images/products/for-home/carpet.jpg"
   },
   {
     "id": 54,
@@ -712,7 +712,7 @@
     "brand": "Thermos",
     "rating": 4.7,
     "reviewsCount": 156,
-    "image": "/images/products/thermos.jpg"
+    "image": "/images/products/for-home/thermos.jpg"
   },
   {
     "id": 56,
@@ -738,7 +738,7 @@
     "brand": "Xiaomi",
     "rating": 4.6,
     "reviewsCount": 189,
-    "image": "/images/products/ledlamp.jpg"
+    "image": "/images/products/for-home/ledlamp.jpg"
   },
   {
     "id": 58,
