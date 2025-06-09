@@ -8,20 +8,20 @@ import { useState } from "react";
 
 const nav = [
   { id: 1, title: "Home", path: "/" },
-  { 
-    id: 2, 
-    title: "Categories", 
-    path: "/category", 
+  {
+    id: 2,
+    title: "Categories",
+    path: "/category",
     categories: [
-      "Electronics", 
-      "Clothing", 
-      "Accessories", 
-      "Beauty", 
-      "Home", 
-      "Games", 
+      "Electronics",
+      "Clothing",
+      "Accessories",
+      "Beauty",
+      "Home",
+      "Games",
       "Household",
-      "Sports"
-    ] 
+      "Sports",
+    ],
   },
   { id: 3, title: "Cart", path: "/cart" },
   { id: 4, title: "About", path: "/about" },
@@ -31,7 +31,8 @@ export default function Navbar() {
   const pathname = usePathname();
   const [showCategories, setShowCategories] = useState(false);
 
-  const navItemClasses = "px-3 py-1 transition-colors inline-flex items-center hover:text-gray-300";
+  const navItemClasses =
+    "px-3 py-1 transition-colors inline-flex items-center hover:text-gray-300";
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-neutral-900 text-white z-10 p-3 shadow-md">
@@ -84,11 +85,7 @@ export default function Navbar() {
                           key={idx}
                           className="px-4 py-2 hover:bg-neutral-700 transition-colors"
                         >
-                          <Link
-                            href={`/category/${category}`}
-                          >
-                            {category}
-                          </Link>
+                          <Link href={`/category/${category}`}>{category}</Link>
                         </li>
                       ))}
                     </motion.ul>

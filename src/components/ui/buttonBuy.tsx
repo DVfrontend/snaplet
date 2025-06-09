@@ -23,4 +23,4 @@ export const ButtonBuy = ({ product }: ButtonBuyProps) => {
       ADD TO CART
     </button>
   );
-}
+};

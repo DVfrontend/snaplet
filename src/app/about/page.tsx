@@ -27,16 +27,16 @@ export default function About() {
             hidden: {},
             visible: {
               transition: {
-                staggerChildren: 0.2
-              }
-            }
+                staggerChildren: 0.2,
+              },
+            },
           }}
         >
           {[
             "Hello! My name is Daniel. I'm a Frontend developer passionate about creating modern and user-friendly interfaces. I have over 2 years of practice, including learning React, TypeScript, Next.js and Tailwind CSS.",
             "I don't just like writing code, but building clear architecture, using clean approaches and creating UI that truly helps the user. I strive for deep understanding of technologies and always look for opportunities to grow.",
             "Currently I'm focusing on reaching Middle level and studying topics like Git, complex hooks in React, rendering optimization, as well as advanced work with animations and responsive design.",
-            "My goal is to become a strong Frontend specialist who can be trusted with complex interfaces and be confident in the result."
+            "My goal is to become a strong Frontend specialist who can be trusted with complex interfaces and be confident in the result.",
           ].map((text, index) => (
             <motion.p
               key={index}

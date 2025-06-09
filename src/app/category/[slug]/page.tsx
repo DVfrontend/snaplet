@@ -23,11 +23,14 @@ export default function CategoryPage() {
         )}
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product) => (
-            <motion.li key={product.id} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
-            initial={{ opacity: 0, y: 20 }}
+            <motion.li
+              key={product.id}
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              viewport={{ once: true, amount: 0.3 }}>
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="relative h-48 w-full">
                 <Image
                   src={product.image}
@@ -55,9 +58,8 @@ export default function CategoryPage() {
               </div>
             </motion.li>
           ))}
-      
         </ul>
-        </div>
+      </div>
     </div>
   );
 }

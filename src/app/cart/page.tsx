@@ -13,12 +13,14 @@ function CartPage() {
       <div className="max-w-6xl mx-auto px-4 py-6">
         {" "}
         {items.length === 0 ? (
-            <h2 className="text-3xl font-bold text-center">Your cart is empty</h2>
+          <h2 className="text-3xl font-bold text-center">Your cart is empty</h2>
         ) : (
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {items.map((item, index) => (
-              <li className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300" key={`${item.id}-${index}`}>
-
+              <li
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                key={`${item.id}-${index}`}
+              >
                 <div className="relative h-48 w-full">
                   <Image
                     src={item.image}
@@ -50,4 +52,4 @@ function CartPage() {
   );
 }
 
-export default memo(CartPage)
+export default memo(CartPage);

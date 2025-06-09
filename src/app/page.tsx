@@ -19,4 +19,4 @@ async function Home() {
   );
 }
 
-export default memo(Home)
+export default memo(Home);
