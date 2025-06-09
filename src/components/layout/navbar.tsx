@@ -2,61 +2,101 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import styles from "@/styles/navbar.module.scss";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
-const nav: { id: number; title: string; path: string }[] = [
-  { id: 1, title: "Дом", path: "/" },
-  { id: 2, title: "Корзина", path: "/cart" },
-  { id: 3, title: "Про меня", path: "/about" },
+const nav = [
+  { id: 1, title: "Home", path: "/" },
+  { 
+    id: 2, 
+    title: "Categories", 
+    path: "/category", 
+    categories: [
+      "Electronics", 
+      "Clothing", 
+      "Accessories", 
+      "Beauty", 
+      "Home", 
+      "Games", 
+      "Household",
+      "Sports"
+    ] 
+  },
+  { id: 3, title: "Cart", path: "/cart" },
+  { id: 4, title: "About", path: "/about" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [showCategories, setShowCategories] = useState(false);
+
+  const navItemClasses = "px-3 py-1 transition-colors inline-flex items-center hover:text-gray-300";
 
   return (
-    <nav className="fixed bg-neutral-900 top-0 right-0 left-0 text-white p-3 items-center z-10">
-      <div className="flex items-center justify-between gap-x-8">
-        <Link href={"./"}>
+    <nav className="fixed top-0 left-0 right-0 bg-neutral-900 text-white z-10 p-3 shadow-md">
+      <div className="max-w-6xl mx-auto flex justify-between items-center">
+        <Link href={"/"}>
           <Image
             src={"/icons/icon.png"}
             alt="logo"
             width={40}
             height={40}
-            className="rounded-md shdaow-xl/50 shadow-white"
+            className="rounded shadow"
           />
         </Link>
 
-        <div className="flex space-x-3 text-right">
-          {nav.map(({ id, title, path }) => (
-            <Link key={id} href={path} className="text-right">
-              <span
-                className={`${
-                  pathname === path ? styles.active : undefined
-                } ease-in duration-300 hover:shadow-white hover:shadow-2xl hover:border-b mx-3 py-1 hover:border-b-white hover:shadow-b border-white hover:shadow-[0_2px_0_0_rgb(255,255,255)] transition-shadow`}
-              >
-                {title}
-              </span>
-            </Link>
+        <div className="flex space-x-4 relative">
+          {nav.map(({ id, title, path, categories }) => (
+            <div key={id} className="relative">
+              {categories ? (
+                <button
+                  onClick={() => setShowCategories((prev) => !prev)}
+                  className={`${navItemClasses} appearance-none bg-transparent ${
+                    pathname === path ? "border-b-2 border-white" : ""
+                  }`}
+                >
+                  {title}
+                </button>
+              ) : (
+                <Link
+                  href={path}
+                  className={`${navItemClasses} ${
+                    pathname === path ? "border-b-2 border-white" : ""
+                  }`}
+                >
+                  {title}
+                </Link>
+              )}
+
+              {categories && (
+                <AnimatePresence>
+                  {showCategories && (
+                    <motion.ul
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute left-0 mt-2 w-40 bg-neutral-800 border border-neutral-700 rounded shadow-lg z-20"
+                    >
+                      {categories.map((category, idx) => (
+                        <li
+                          key={idx}
+                          className="px-4 py-2 hover:bg-neutral-700 transition-colors"
+                        >
+                          <Link
+                            href={`/category/${category}`}
+                          >
+                            {category}
+                          </Link>
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              )}
+            </div>
           ))}
-          {/*.map
-
-
-
-          <details className="group relative cursor-pointer">
-            <summary className="list-none text-white px-3 py-1 rounded-md hover:bg-white hover:text-neutral-900 transition-colors duration-300">
-              Меню
-            </summary>
-            <ul className="absolute right-0 mt-2 w-32 bg-neutral-800 rounded-md shadow-lg border border-neutral-700 z-10 hidden group-open:block">
-              <li className="px-4 py-2 hover:bg-neutral-700 transition-colors">
-                Пункт 1
-              </li>
-              <li className="px-4 py-2 hover:bg-neutral-700 transition-colors">
-                Пункт 2
-              </li>
-            </ul>
-          </details>
-          */}
         </div>
       </div>
     </nav>

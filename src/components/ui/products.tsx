@@ -1,7 +1,7 @@
 "use client";
 
 import type { Product } from "@/types/productType";
-import ButtonBuy from "./buttonBuy";
+import {ButtonBuy} from "./buttonBuy";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { memo } from "react";
@@ -40,10 +40,10 @@ function Products({ products }: ProductsProps) {
               </div>
 
               <div className="mt-4 flex items-center justify-between">
-                <span className="text-base font-bold text-indigo-600 dark:text-indigo-400">
+                <span className="text-base font-bold">
                   {item.price} {item.currency}
                 </span>
-                <ButtonBuy product={item} />
+                {item.inStock ? <ButtonBuy product={item} /> : <p className="text-red-500">Product is not available</p> }
               </div>
             </div>
           </motion.li>

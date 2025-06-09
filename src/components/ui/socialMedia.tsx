@@ -3,12 +3,14 @@
 import data from "@/data/socialMedia.json";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+
 type Socials = {
   name: string;
   id: number;
   url: string;
   logo?: string;
 };
+
 function SocialMedia() {
   const [socials, setSocials] = useState<Socials[]>([]);
 
