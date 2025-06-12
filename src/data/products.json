@@ -36,7 +36,7 @@
     "brand": "IKEA",
     "rating": 4.5,
     "reviewsCount": 87,
-    "image": "/images/products/Beautysofa.jpg"
+    "image": "/images/products/sofa.jpg"
   },
   {
     "id": 4,
@@ -49,7 +49,7 @@
     "brand": "Nike",
     "rating": 4.3,
     "reviewsCount": 256,
-    "image": "/images/products/tshirt.jpg"
+    "image": "/images/products/t-shirt.jpg"
   },
   {
     "id": 5,
@@ -101,7 +101,7 @@
     "brand": "Tefal",
     "rating": 4.4,
     "reviewsCount": 76,
-    "image": "/images/products/Beautypots.jpg"
+    "image": "/images/products/pots.jpg"
   },
   {
     "id": 9,
@@ -188,7 +188,7 @@
     "price": 15.99,
     "currency": "USD",
     "inStock": true,
-    "category": "Beauty",
+    "category": "Products",
     "brand": "Lavazza",
     "rating": 4.8,
     "reviewsCount": 198,
@@ -257,7 +257,7 @@
     "brand": "Christy",
     "rating": 4.4,
     "reviewsCount": 87,
-    "image": "/images/products/Beautytowels.jpg"
+    "image": "/images/products/towels.jpg"
   },
   {
     "id": 21,
@@ -387,7 +387,7 @@
     "brand": "Corelle",
     "rating": 4.5,
     "reviewsCount": 112,
-    "image": "/images/products/Beautydinnerware.jpg"
+    "image": "/images/products/dinnerware.jpg"
   },
   {
     "id": 31,
@@ -413,7 +413,7 @@
     "brand": "Tempur",
     "rating": 4.7,
     "reviewsCount": 178,
-    "image": "/images/products/Beautypillow.jpg"
+    "image": "/images/products/pillow.jpg"
   },
   {
     "id": 33,
@@ -439,7 +439,7 @@
     "brand": "Joseph Joseph",
     "rating": 4.5,
     "reviewsCount": 134,
-    "image": "/images/products/Beautyscales.jpg"
+    "image": "/images/products/scales.jpg"
   },
   {
     "id": 35,
@@ -452,7 +452,7 @@
     "brand": "Simplehuman",
     "rating": 4.2,
     "reviewsCount": 87,
-    "image": "/images/products/Beautytoothbrushholder.jpg"
+    "image": "/images/products/toothbrushholder.jpg"
   },
   {
     "id": 36,
@@ -582,7 +582,7 @@
     "brand": "Lechuza",
     "rating": 4.4,
     "reviewsCount": 87,
-    "image": "/images/products/Beautyflowerpot.jpg"
+    "image": "/images/products/flowerpot.jpg"
   },
   {
     "id": 52,
@@ -634,7 +634,7 @@
     "brand": "Thermos",
     "rating": 4.7,
     "reviewsCount": 156,
-    "image": "/images/products/Beautythermos.jpg"
+    "image": "/images/products/thermos.jpg"
   },
   {
     "id": 56,

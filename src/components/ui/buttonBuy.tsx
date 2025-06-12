@@ -2,9 +2,21 @@
 
 import styles from "@/styles/buttonBuy.module.scss";
 import { toast } from "sonner";
-import { Product } from "@/types/productType";
 import { useAppDispatch } from "@/store";
 import { addToCart } from "@/store/cartSlice";
+
+interface Product {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  currency: string;
+  inStock: boolean;
+  category: string;
+  brand: string;
+  rating: number;
+  image: string;
+}
 
 interface ButtonBuyProps {
   product: Product;

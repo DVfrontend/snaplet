@@ -1,3 +1,5 @@
+"use client";
+
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Product } from "@/types/productType";
 
@@ -6,7 +8,10 @@ interface CartState {
 }
 
 const initialState: CartState = {
-  items: [],
+  items:
+    typeof window !== "undefined" && localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart") as string)
+      : [],
 };
 
 const cartSlice = createSlice({
@@ -15,9 +20,19 @@ const cartSlice = createSlice({
   reducers: {
     addToCart(state, action: PayloadAction<Product>) {
       state.items.push(action.payload);
+
+      localStorage.setItem("cart", JSON.stringify(state.items));
+    },
+    removeFromCart(state, action: PayloadAction<number>) {
+      state.items = state.items.filter((item) => item.id !== action.payload);
+      localStorage.setItem("cart", JSON.stringify(state.items));
+    },
+    clearCart(state) {
+      state.items = [];
+      localStorage.setItem("cart", JSON.stringify([]));
     },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
