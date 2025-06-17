@@ -4,22 +4,9 @@ import { useParams } from "next/navigation";
 import products from "@/data/products.json";
 import Image from "next/image";
 import { ButtonBuy } from "@/components/ui/buttonBuy";
-import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  currency: string;
-  inStock: boolean;
-  category: string;
-  brand: string;
-  rating: number;
-  image: string;
-}
+import { Product } from "@/types/productType";
 
 export default function CategoryPage() {
   const params = useParams();

@@ -5,19 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { memo } from "react";
-
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  currency: string;
-  inStock: boolean;
-  category: string;
-  brand: string;
-  rating: number;
-  image: string;
-}
+import { Product } from "@/types/productType";
 
 interface ProductsProps {
   products: Product[];

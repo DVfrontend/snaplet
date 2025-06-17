@@ -17,9 +17,9 @@ function CartPage() {
         </p>
       ) : (
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map((item) => (
+          {items.map((item, i) => (
             <li
-              key={item.id}
+              key={`${item.id}-${i}`}
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
             >
               <div className="relative h-48 w-full">
