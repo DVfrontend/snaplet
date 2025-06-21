@@ -1,23 +1,50 @@
 "use client";
 
-import React from "react";
-import product from "@/data/products.json";
+import { use } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ButtonBuy } from "@/components/ui/buttonBuy";
+import { ButtonBuy } from "@/components/buttonBuy";
 import { Product } from "@/types/productType";
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default function ProductPage(promiseParams: { params: Promise<{ id: string }> }) {
+  const { id } = use(promiseParams.params);
+  const [item, setItem] = useState<Product | null>(null);
+  const [notFound, setNotFound] = useState(false);
 
-  const products: Product[] = product as Product[];
-  const item = products.find((m) => m.id.toString() === id);
+  useEffect(() => {
+    fetch("/data/products.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load products");
+        return res.json();
+      })
+      .then((data: Product[]) => {
+        const product = data.find((p) => p.id.toString() === id);
+        if (product) {
+          setItem(product);
+        } else {
+          setNotFound(true);
+        }
+      })
+      .catch((err) => {
+        console.error("Error fetching product:", err);
+        setNotFound(true);
+      });
+  }, [id]);
 
-  if (!item) {
+  if (notFound) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <h1 className="text-center text-2xl font-semibold text-red-500">
           Product not found
         </h1>
+      </div>
+    );
+  }
+
+  if (!item) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <p className="text-gray-500">Loading...</p>
       </div>
     );
   }

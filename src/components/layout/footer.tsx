@@ -1,4 +1,6 @@
-import React from "react";
+'use client'
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,56 +11,25 @@ type SocialLink = {
   name: string;
 };
 
-const links: SocialLink[] = [
-  {
-    id: 1,
-    href: "mailto:daniel.vartanov81@gmail.com",
-    icon: "/icons/gmail.png",
-    name: "gmail",
-  },
-  {
-    id: 2,
-    href: "https://github.com/DVfrontend",
-    icon: "/icons/github.png",
-    name: "github",
-  },
-  {
-    id: 3,
-    href: "https://linkedin.com",
-    icon: "/icons/linkedin.png",
-    name: "linkedin",
-  }, // no
-  {
-    id: 4,
-    href: "https://t.me/TSXplorer",
-    icon: "/icons/telegram.png",
-    name: "telegram",
-  },
-  {
-    id: 5,
-    href: "https://wa.me/995568981657",
-    icon: "/icons/whatsapp.png",
-    name: "whatsapp",
-  },
-  {
-    id: 6,
-    href: "https://x.com/VartanovDaniel",
-    icon: "/icons/twitter.png",
-    name: "Twitter",
-  },
-];
-
 const Footer: React.FC = () => {
+  const [data, setData] = useState<SocialLink[]>([]);
+
+  useEffect(() => {
+    fetch('/data/socialMedia.json')
+      .then((res) => res.json())
+      .then((json) => setData(json))
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <footer className="bg-neutral-900 text-white py-4 bg-black">
-      <div className="flex justify-center gap-4 mb-4 ">
-        {links.map(({ id, href, icon, name }) => (
+      <div className="flex justify-center gap-4 mb-4">
+        {data.map(({ id, href, icon, name }) => (
           <Link
             key={id}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className=""
           >
             <Image src={icon} alt={name} width={25} height={25} />
           </Link>
@@ -69,6 +40,11 @@ const Footer: React.FC = () => {
           &copy;{new Date().getDate()}/{new Date().getMonth() + 1}/
           {new Date().getFullYear()} DV product.
         </p>
+        <a
+    href="https://frontendbydaniel.vercel.app/"
+    target="_blank">
+    Click to Visit my Web-Site
+  </a>
       </div>
     </footer>
   );

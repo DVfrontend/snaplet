@@ -1,9 +1,8 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import products from "@/data/products.json";
 import Image from "next/image";
-import { ButtonBuy } from "@/components/ui/buttonBuy";
+import { ButtonBuy } from "@/components/buttonBuy";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Product } from "@/types/productType";
@@ -11,12 +10,25 @@ import { Product } from "@/types/productType";
 export default function CategoryPage() {
   const params = useParams();
   const slug = params?.slug;
-
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    const newFiltered = products.filter((product) => product.category === slug);
-    setFilteredProducts(newFiltered);
+    if (!slug) return;
+
+    fetch("/data/products.json")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to load products");
+        }
+        return res.json();
+      })
+      .then((data: Product[]) => {
+        const filtered = data.filter((product) => product.category === slug);
+        setFilteredProducts(filtered);
+      })
+      .catch((err) => {
+        console.error("Fetch error:", err);
+      });
   }, [slug]);
 
   return (
@@ -46,14 +58,16 @@ export default function CategoryPage() {
                       {product.description}
                     </p>
                   </div>
-                  <div className="mt-4 flex products-center justify-between">
+                  <div className="mt-4 flex items-center justify-between">
                     <span className="text-base font-bold">
                       {product.price} {product.currency}
                     </span>
                     {product.inStock ? (
                       <ButtonBuy product={product} />
                     ) : (
-                      <p className="text-red-500">Product is not available</p>
+                      <p className="text-red-500 text-sm">
+                        Not available
+                      </p>
                     )}
                   </div>
                 </div>

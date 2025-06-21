@@ -80,9 +80,9 @@ export default function Navbar() {
                       transition={{ duration: 0.2 }}
                       className="absolute left-0 mt-2 w-40 bg-neutral-800 border border-neutral-700 rounded shadow-lg z-20"
                     >
-                      {categories.map((category, idx) => (
+                      {categories.map((category, index) => (
                         <li
-                          key={idx}
+                          key={index}
                           className="px-4 py-2 hover:bg-neutral-700 transition-colors"
                         >
                           <Link href={`/category/${category}`}>{category}</Link>

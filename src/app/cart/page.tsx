@@ -3,6 +3,7 @@
 import { useAppSelector } from "@/store";
 import Image from "next/image";
 import { memo } from "react";
+import { ButtonDelete } from "@/components/buttonDelete";
 
 function CartPage() {
   const items = useAppSelector((state) => state.cart.items);
@@ -20,14 +21,14 @@ function CartPage() {
           {items.map((item, i) => (
             <li
               key={`${item.id}-${i}`}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg transition-shadow duration-300"
             >
               <div className="relative h-48 w-full">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover transition-transform duration-300"
                 />
               </div>
 
@@ -42,6 +43,7 @@ function CartPage() {
                   <span className="text-base font-bold text-indigo-600 dark:text-indigo-400">
                     {item.price} {item.currency}
                   </span>
+                  <ButtonDelete />
                 </div>
               </div>
             </li>

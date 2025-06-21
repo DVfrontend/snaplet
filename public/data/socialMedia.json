@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "GitHub",
+    "href": "https://github.com/DVfrontend",
+    "icon": "/icons/github.png"
+  },
+  {
+    "id": 2,
+    "name": "Gmail",
+    "href": "mailto:daniel.vartanov81@gmail.com",
+    "icon": "/icons/gmail.png"
+  },
+  {
+    "id": 3,
+    "name": "Whatsapp",
+    "href": "https://wa.me/995568981657",
+    "icon": "/icons/whatsapp.png"
+  },
+  {
+    "id": 4,
+    "name": "X",
+    "href": "https://x.com/VartanovDaniel",
+    "icon": "/icons/twitter.png"
+  }
+]
